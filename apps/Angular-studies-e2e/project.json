@@ -1,0 +1,10 @@
+{
+  "name": "Angular-studies-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/Angular-studies-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["Angular-studies"],
+  "// targets": "to see all targets run: nx show project Angular-studies-e2e --web",
+  "targets": {}
+}

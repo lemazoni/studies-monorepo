@@ -1,0 +1,29 @@
+
+@if(name) {
+  @if (addingTask){
+    <section id="new-task">
+      <app-new-task [userId]="userId"  (closeDialog)="closeNewTask()"/>
+    </section>
+  }
+  <section id="tasks">
+    <header>
+      <h2>{{name}}</h2>
+      <menu>
+        <button (click)="addNewTask()">Add Task</button>
+      </menu>
+    </header>
+    <ul>
+      @for (task of selectedUserTasks; track task.id){
+        <li>
+          <app-task [task]="task"/>
+        </li>
+      }
+    </ul>
+  </section>
+
+} @else {
+  <div>
+    <h2> No user selected yet</h2>
+  </div>
+}
+
