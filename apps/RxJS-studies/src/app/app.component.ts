@@ -1,5 +1,5 @@
-import { Component, DestroyRef, effect, inject, OnInit, signal } from '@angular/core';
-import { interval, map, Observable } from 'rxjs';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { interval, Observable } from 'rxjs';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
