@@ -1,13 +1,20 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { MessagesService } from '../messages.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-messages-list',
   standalone: true,
   templateUrl: './messages-list.component.html',
   styleUrl: './messages-list.component.css',
+  imports: [
+    AsyncPipe
+  ]
 })
 export class MessagesListComponent {
+  private messagesService = inject(MessagesService);
   messages = input.required<string[]>();
+  messages$ = this.messagesService.messages$;
 
   get debugOutput() {
     console.log('[MessagesList] "debugOutput" binding re-evaluated.');
